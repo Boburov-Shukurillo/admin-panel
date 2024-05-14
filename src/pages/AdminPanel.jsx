@@ -1,9 +1,10 @@
 import React from 'react'
+import Login from './Login'
 
 const AdminPanel = ({ isLogin }) => {
   return (
     <div>
-      {
+      {isLogin &&
         <div className='max-w-7xl mx-auto flex items-center justify-center py-20 max-sm:p-5 max-sm:pt-20'>
           <form action="" className='flex flex-col items-center justify-between p-20 w-1/2 max-sm:w-full  max-sm:p-3 gap-5 drop-shadow-lg shadow-md rounded-xl'>
             <h1 className='text-4xl font-mono font-bold'>Husan Art</h1>
@@ -19,6 +20,11 @@ const AdminPanel = ({ isLogin }) => {
             <button className='w-full py-3 rounded-xl bg-[#131212] text-white'>Submit</button>
           </form>
         </div>
+      }
+      {
+        !isLogin
+        &&
+        <Login />
       }
     </div>
   )
